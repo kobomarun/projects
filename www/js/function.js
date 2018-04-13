@@ -49,6 +49,8 @@ function submitComplain() {
   var id = localStorage.getItem('id');
   var title = document.getElementById("title").value;
   var msg = document.getElementById("message").value;
+  var phone = document.getElementById("phone").value;
+  var location = document.getElementById("location").value;
   var random = Math.floor((Math.random() * 1000000) +1);
   if(title  == '') {
     alert("We can not accept empty complain");
@@ -59,7 +61,9 @@ function submitComplain() {
       'random': random,
       'title': title,
       'msg': msg,
-      'id': id
+      'id': id,
+      'phone': phone,
+      'location': location
     }
     $.ajax({
       type: 'POST',
