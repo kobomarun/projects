@@ -34,18 +34,29 @@
                  <div class="pad-text">View My Complaints</div>
               </div>
            </div>
-
+           <div class="margin_bottom_20" style="margin:10px" id="viewC">
+             <form name="verify">
+            <label >Enter Your Phone Number</label>
+            <input type="number" class="form-control" name="phone" id="phone" autocomplete='gg'
+               data-validation="string" data-validation-allowing="string" autofocus required/>
+                 <div id="submitButton" onclick="checkBusisness()" class="button_alt">Continue</div>
+          </form>
+           </div>
+          <div id="viewComplain" style="display:none">
           <button class="accordion">Complaint one</button>
           <div class="panel">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <div class="alert alert-info">Pending...</div>
           </div>
            </div>
+         </div>
         </div>
         <!-- /content -->
      </div>
      <!-- /page END OF MTN VENDING -->
      <script src="js/fastclick.js" type="text/javascript"></script>
      <script src="js/function.js" type="text/javascript"></script>
+     <script src="js/public-complain.js" type="text/javascript"></script>
+
    </body>
 </html>
