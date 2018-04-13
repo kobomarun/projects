@@ -35,7 +35,7 @@ function validationcheck(){
       console.log(response);
       if(response !== 'error') {
       //set user details in localStorage
-      localStorage.setItem("phone",response['email']);
+      localStorage.setItem("phone",response['phone']);
       localStorage.setItem("id",response['id']);
       localStorage.setItem("fname",response['fname']);
       localStorage.setItem("lname",response['lname']);
