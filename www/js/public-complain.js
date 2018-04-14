@@ -27,13 +27,19 @@ function checkBusisness(){
       complete   : function() {$.mobile.loading('hide')},
       dataType: 'json',
       success: function(response){
-      console.log(response);
+
       if(response !== 'error') {
+        document.getElementById('viewC').style="display:none";
+        document.getElementById('viewComplain').style="display:block";
+        response.map(function(row) {
+          console.log(row.title);
+          document.getElementById('id').innerHTML=row.title;
+          document.getElementById('msg').innerHTML=row.message;
+        });
       //set user details in localStorage
-      localStorage.setItem("bphone",response['phone']);
-      localStorage.setItem("bname",response['bname']);
-      document.getElementById('viewC').style="display:none";
-      document.getElementById('viewComplain').style="display:block";
+      //localStorage.setItem("bphone",response['phone']);
+      //localStorage.setItem("bname",response['bname']);
+
     } else {
       alert("This phone number is not registered with any business");
     }
@@ -41,6 +47,7 @@ function checkBusisness(){
       },
       error: function(response) {
         console.log(response);
+          alert("This phone number is not registered with any business");
       }
     });
     return false;
