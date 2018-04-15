@@ -6,18 +6,25 @@ var fullName = fname +" " + lname
  $('#name').html(fullName);
  $('#phone').html(phone);
 
- function showConfirm() {
+ /*function showConfirm() {
    confirm(
        'Do you really want to exit?',  // message
        exitFromApp,              // callback to invoke with index of button pressed
        'Exit',            // title
        'Cancel,OK'         // buttonLabels
    );
- }
+ }*/
 
 
-   function exitFromApp(buttonIndex) {
-     if (buttonIndex==2){
-      navigator.app.exitApp();
+   function showConfirm() {
+     //if (buttonIndex==2){
+      //navigator.app.exitApp();
+    //}
+    if (confirm('Close this App?')){
+        if (navigator.app) {
+            navigator.app.exitApp();
+        }else if (navigator.device) {
+            navigator.device.exitApp();
+        }
     }
   }
