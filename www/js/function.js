@@ -16,29 +16,27 @@ if(phone.length !== 11) {
   dataType: 'json',
   success: function(response){
   console.log(response);
-  if(response !== 'error') {
-    document.getElementById('confirm').innerHTML="Confirming ......";
-    setInterval(function() {
-      var div = $('#result');
-      div.css({ display: "block" });
-      document.getElementById('confirm').style="display:none";
-      document.getElementById('phone').value ="";
-      document.getElementById('tariff-name').innerHTML=response['tariffName'];
-      document.getElementById('tariff-date').innerHTML=response['date'];
-      document.getElementById('tariff-amount').innerHTML=response['price'];
-
-      document.getElementById('pay-detail').innerHTML="Payment Details for " + phone;
-     }, 2000);
-
-
-
-  } else {
-    alert("No record of payment for this phone number");
-  }
+  console.log('error',response);
+  alert("No record of payment for this phone number");
 
     },
     error: function(response) {
-      console.log(response);
+      obj =JSON.parse(response.responseText);
+      console.log(obj)
+      document.getElementById('confirm').innerHTML="Confirming ......";
+
+      setInterval(function() {
+        var div = $('#result');
+        div.css({ display: "block" });
+        document.getElementById('confirm').style="display:none";
+        document.getElementById('phone').value ="";
+        document.getElementById('tariff-name').innerHTML=response.responseText.tariffName;
+        document.getElementById('tariff-date').innerHTML=response['date'];
+        document.getElementById('tariff-amount').innerHTML=response['price'];
+
+        document.getElementById('pay-detail').innerHTML="Payment Details for " + phone;
+       }, 2000);
+
     }
   });
   return false;

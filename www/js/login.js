@@ -9,7 +9,7 @@ function validationcheck(){
   else
   {
     //disable loginButton
-    document.getElementById("submitButton").innerHTML="loggin.....";
+    document.getElementById("submitButton").innerHTML="Checking .....";
     $("#submitButton",form).attr("disabled","disabled");
     //check if there is data connection
     var networkState =  navigator.onLine;
