@@ -21,8 +21,11 @@ if(phone.length !== 11) {
 
     },
     error: function(response) {
-      obj =JSON.parse(response.responseText);
-      console.log(obj)
+      var row = response.responseText;
+    var arr = row.split('');
+    arr.map(function(n) {console.log(response)})
+
+
       document.getElementById('confirm').innerHTML="Confirming ......";
 
       setInterval(function() {

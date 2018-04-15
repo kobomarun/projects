@@ -1,7 +1,10 @@
 var fname = localStorage.getItem('fname');
 var lname = localStorage.getItem('lname');
+var phone = localStorage.getItem('phone');
+
 var fullName = fname +" " + lname
  $('#name').html(fullName);
+ $('#phone').html(phone);
 
  function showConfirm() {
    confirm(

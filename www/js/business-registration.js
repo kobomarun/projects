@@ -15,7 +15,12 @@ function registerBusiness() {
   			alert("Please Business Phone Number");
   			document.register.phone.focus();
 
-  		} else {
+  		}
+    else if (document.register.pwd.value == "") {
+        alert("Please Business Password");
+        document.register.pwd.focus();
+
+      } else {
   var btn = document.getElementById("submit");
   btn.innerHTML ="Saving.....";
   //btn.style="display:none"
@@ -27,6 +32,8 @@ function registerBusiness() {
   var type = document.getElementById("businessType").value;
   var city = document.getElementById("city").value;
   var cname = document.getElementById("cname").value;
+  var pwd = document.getElementById("pwd").value;
+
 
   var form_data = {
     'name': bname,
@@ -36,7 +43,8 @@ function registerBusiness() {
     'type': type,
     'category': cat,
     'phone': phone,
-    'cname':cname
+    'cname':cname,
+    'pwd':pwd
   }
   var networkState =  navigator.onLine;
   if (networkState == false){

@@ -39,8 +39,11 @@ function validationcheck(){
       localStorage.setItem("id",response['id']);
       localStorage.setItem("fname",response['fname']);
       localStorage.setItem("lname",response['lname']);
-
+      if(response['type'] === 1) {
       location.href='dashboard.html';
+    } else {
+      location.href='customer-dash.html';
+    }
     } else {
       alert("Wrong Phone Number or Password");
       document.getElementById("submitButton").innerHTML="Login to your Account";
