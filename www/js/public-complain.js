@@ -33,8 +33,9 @@ function checkBusisness(){
         document.getElementById('viewComplain').style="display:block";
         response.map(function(row) {
           console.log(row.title);
-          document.getElementById('id').innerHTML=row.title;
+          document.getElementById('title').innerHTML=row.title;
           document.getElementById('msg').innerHTML=row.message;
+
         });
       //set user details in localStorage
       //localStorage.setItem("bphone",response['phone']);

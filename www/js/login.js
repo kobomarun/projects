@@ -50,6 +50,9 @@ function validationcheck(){
       },
       error: function(response) {
         console.log(response);
+        alert("Something Went Wrong");
+        document.getElementById("submitButton").innerHTML="Login to your Account";
+
       }
     });
     return false;
