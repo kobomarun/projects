@@ -39,6 +39,8 @@ function validationcheck(){
       localStorage.setItem("id",response['id']);
       localStorage.setItem("fname",response['fname']);
       localStorage.setItem("lname",response['lname']);
+      localStorage.setItem("bname",response['bname']);
+
       if(response['type'] == 1) {
       location.href='dashboard.html';
     } else {
