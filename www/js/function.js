@@ -15,44 +15,29 @@ if(phone.length !== 11) {
   complete   : function() {$.mobile.loading('hide')},
   dataType: 'json',
   success: function(response){
-  console.log(response);
-  //console.log('error',JSON.striginify(response.tariffName));
-  alert("No record of payment for this phone number");
-
-    },
-    error: function(response) {
+    if(response !== 'error') {
       var row = response.responseText;
-      var obj = row.split('');
-      obj.map(function(rows){
-        //console.log(row);
-        setInterval(function() {
+      response.map(function(row){
+        console.log('success',row.tariffName);
+        document.getElementById('confirm').innerHTML="<h4>Confirming ......</h4>";
+
+
           var div = $('#result');
           div.css({ display: "block" });
-          document.getElementById('confirm').style="display:none";
+      
           document.getElementById('phone').value ="";
-          document.getElementById('tariff-name').innerHTML=JSON.stringify(obj);
-          document.getElementById('tariff-date').innerHTML=response['date'];
-          document.getElementById('tariff-amount').innerHTML=response['price'];
+          document.getElementById('tariff-name').innerHTML=row.tariffName;
+          document.getElementById('tariff-date').innerHTML=row.date;
+          document.getElementById('tariff-amount').innerHTML=row.price;
 
           document.getElementById('pay-detail').innerHTML="Payment Details for " + phone;
-         }, 2000);
 
-      });
-      //console.log(obj.map(function));
+      })
 
-      document.getElementById('confirm').innerHTML="<h4>Confirming ......</h4>";
-
-      setInterval(function() {
-        var div = $('#result');
-        div.css({ display: "block" });
-        document.getElementById('confirm').style="display:none";
-        document.getElementById('phone').value ="";
-        document.getElementById('tariff-name').innerHTML=JSON.striginify(obj);
-        document.getElementById('tariff-date').innerHTML=response['date'];
-        document.getElementById('tariff-amount').innerHTML=response['price'];
-
-        document.getElementById('pay-detail').innerHTML="Payment Details for " + phone;
-       }, 2000);
+    } else {
+      console.log('errorsss',response);
+      alert("No record of payment for this phone number");
+    }
 
     }
   });
