@@ -209,6 +209,9 @@ public function addPayment() {
 			}
 	
 	public function getBusinessListing() {
+	
+		$lgWorker = "LG Worker";
+		$this->db->where('name !=', $lgWorker);
 		$query = $this->db->get('firms')->result();
 		$count = 1;
 		foreach($query as $row) {
@@ -235,7 +238,28 @@ public function addPayment() {
 		$query = $this->db->get('tariff')->result();
 		$count = 1;
 		foreach($query as $row) {
-		echo "<option value=".$row->tariff.":".$row->price.">".$row->tariff."</option>";
+		echo "<option value=".json_encode($row->price.":".$row->tariff).">".$row->tariff."</option>";
+		}
+	}
+	
+	public function getCategory() {
+		$query = $this->db->get('business_category')->result();
+		foreach($query as $row) {
+		echo "<option value=". $row->name.">".$row->name."</option>";
+		}
+	}
+	
+	public function getBusinessType() {
+		$query = $this->db->get('business_type')->result();
+		foreach($query as $row) {
+		echo "<option value=". $row->name.">".$row->name."</option>";
+		}
+	}
+	
+	public function getLgs() {
+		$query = $this->db->get('local_govts')->result();
+		foreach($query as $row) {
+		echo "<option value=". $row->name.">".$row->name."</option>";
 		}
 	}
 
