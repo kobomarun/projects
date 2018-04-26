@@ -38,14 +38,14 @@
               <div class="pad">
               <div class="clear_float"></div><br />
                <div class="margin_bottom_20">
-                <label >Enter Phone Number</label>
+                <label id="label">Enter Phone Number</label>
                 <input type="number" class="form-control" name="name" id="phone" autocomplete='phone'
                    data-validation="number" data-validation-allowing="number" autofocus required/>
                </div>
 
                 <div class="clear_float"></div>
                 <div class="clear_float"></div><br /><br />
-                <div id="signup_btn_1" onclick="verifyPayment()" class="button_alt">Verify Payment</div>
+                <div id="signup_btn_2" onclick="verifyPayment()" class="button_alt">Verify Payment</div>
              </div>
            </form>
            <div class="panel-heading" id="confirm"></div>
@@ -55,15 +55,11 @@
               <tr>
                 <th>SN</th>
                 <th>Payment Type</th>
-                <th>Amount</th>
                 <th>Date of Payment</th>
+                <th>Amount</th>
               </tr>
-              <tr>
-                <td>1</td>
-                <td><p id="tariff-name">Lockup Shop</p></td>
-                <td id='tariff-amount'>1900</td>
-                <td id='tariff-date'>23 - 05 -2017</td>
-              </tr>
+              <tbody id="content">
+              </tbody>
             </table>
           </div>
            </div>

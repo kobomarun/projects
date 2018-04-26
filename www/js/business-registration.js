@@ -1,17 +1,14 @@
 function registerBusiness() {
   if (document.register.bname.value == "") {
-			alert("Please Enter Your Fullname");
+			alert("Please Enter Business Name");
 			document.register.bname.focus();
 
 		} else if (document.register.cname.value == "") {
   			alert("Please Contact Persons name");
   			document.register.cname.focus();
+      }
 
-  	} else if (document.register.address.value == "") {
-  			alert("Please Business full address");
-  			document.register.fname.focus();
-
-  	} else if (document.register.phone.value == "") {
+  	 else if (document.register.phone.value == "") {
   			alert("Please Business Phone Number");
   			document.register.phone.focus();
 
@@ -33,6 +30,7 @@ function registerBusiness() {
   var city = document.getElementById("city").value;
   var cname = document.getElementById("cname").value;
   var pwd = document.getElementById("pwd").value;
+  var id = localStorage.getItem('id');
 
 
   var form_data = {
@@ -44,7 +42,8 @@ function registerBusiness() {
     'category': cat,
     'phone': phone,
     'cname':cname,
-    'pwd':pwd
+    'pwd':pwd,
+    'id':id
   }
   var networkState =  navigator.onLine;
   if (networkState == false){
@@ -58,6 +57,7 @@ function registerBusiness() {
           beforeSend : function() {$.mobile.loading('show')},
           complete   : function() {$.mobile.loading('hide')},
           success: function(response) {
+          
             if(response = 'true') {
               console.log(response);
               alert("You have Successfully added" + bname + "to Owo ori Ijoba");
@@ -68,7 +68,7 @@ function registerBusiness() {
               lg="";
               city="";
               location.href="dashboard.html";
-            } else {
+            }  else {
               alert("Error while adding to database Please try again");
               btn.innerHTML = "Save ";
             }

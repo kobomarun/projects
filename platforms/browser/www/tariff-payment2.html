@@ -14,7 +14,7 @@
       <script src="js/neon-custom.js"></script>
       <script src="phonegap.js"></script>
    </head>
-   <body>
+   <body onload="getAllTariff()">
      <div data-role="page"  id="mtn">
         <div data-role="header" onclick="lhistory.back()">
            <div class="logo">
@@ -47,36 +47,28 @@
                  <div class="regular margin_bottom_20">
                    <div class="margin_bottom_20">
                      <label >Select Tariff Type</label>
-                     <select class="select-choice-1" id="tariff" onchange="onChange(this)">
-                       <option value="Cattle tax:4500">Cattle tax</option>
-                       <option value="Customary Burial Ground:40000">Customary burial grounds</option>
-                       <option value="Shop Kiosk rate :2300">Death Certificate</option>
-                       <option value="Shop Kiosk rate :2300">Domestic animal license</option>
-                       <option value="Shop Kiosk rate :2300">Markets taxes</option>
-                       <option value="Shop Kiosk rate :2300">Merriment and road closure</option>
-                       <option value="Marriage Certificate:1900">Mariage Certificate</option>
-                       <option value="Shop Kiosk rate :2300">Markets taxes</option>
-                       <option value="Shop Kiosk rate :2300">Motor park levies</option>
-                       <option value="Street Naming:600">Street Naming</option>
-                       <option value="Shop Kiosk rate :2300">On and Off Liquor License</option>
-                       <option value="Shop Kiosk rate :2300">Public convenience, sewage and refuse disposal</option>
-                       <option value="Shop Kiosk rate :2300">Radio and television license</option>
-                       <option value="Shop Kiosk rate :2300">Religious places establishment permit</option>
-                       <option value="Shops and Kiosks rates:1900">Shops and Kiosks rates</option>
-                       <option value="Shop Kiosk rate :2300">Signboard and Advertisement permit</option>
-                       <option value="Shop Kiosk rate :2300">Tenement rates</option>
-                       <option value="Shop Kiosk rate :2300">Vehicle radio license fees</option>
-                       <option value="Wrong Parking:1900">Wrong parking charges</option>
+                     <select class="select-choice-1" id="tariff" onchange="onChange(this)" id="content">
+                       <option id="">Select</option>
+
                      </select>
                    </div>
                      <div class="clear_float"></div><br />
                    <div class="margin_bottom_20">
                       <label >Amount</label>
-                      <input type="number" class="form-control" name="name" id="amount" autocomplete='fname'
+                      <input type="text" class="form-control" name="name" id="amount" autocomplete='fname'
                          data-validation="string" data-validation-allowing="string">
                          <input type="text" class="form-control" name="name" id="tariffName" autocomplete='fname'
-                            data-validation="string" data-validation-allowing="string">
+                            >
                    </div>
+                   <div class="margin_bottom_20">
+                     <label >Select Tariff Type</label>
+                     <select class="select-choice-1" id="pmethod" >
+                       <option value="Cash">Cash</option>
+                       <option value="Bank Deposit">Bank Deposit</option>
+
+                     </select>
+                   </div>
+                     <div class="clear_float"></div><br />
 
                     <div class="clear_float"></div>
                     <div class="clear_float"></div><br /><br />

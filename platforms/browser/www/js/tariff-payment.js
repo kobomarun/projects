@@ -54,13 +54,12 @@ function onChange(e) {
 	var value = document.getElementById("tariff").value
 
 newV = e.options[e.selectedIndex].value
-	console.log(newV);
-  var price = newV.split(":");
-  var tariffAmount = document.getElementById("amount").value=price[1];
-  var tariffName = document.getElementById("tariffName").value=price[0];
+  var splitValue = newV.split(":");
+  var tariffAmount = document.getElementById("amount").value=splitValue[0];
+  var tariffName = document.getElementById("tariffName").value=splitValue[1];
   localStorage.setItem('tariffName', tariffName);
   localStorage.setItem('tariffAmount', tariffAmount);
-
+console.log(splitValue[1]);
 }
 
 function Payment() {
@@ -70,12 +69,16 @@ function Payment() {
     tamount = localStorage.getItem('tariffAmount');
     bname = localStorage.getItem('bname');
     bphone = localStorage.getItem('bphone');
+    officerid = localStorage.getItem('id');
+    pmethod = document.getElementById('pmethod').value;
 
     form_data = {
       'tname': tname,
       'tamount': tamount,
       'bname': bname,
-      'bphone': bphone
+      'bphone': bphone,
+      'p_method':pmethod,
+      'officer_id':officerid
     }
 
     $.ajax({
@@ -105,4 +108,29 @@ function Payment() {
 	} else {
 
 	}
+}
+
+function getAllTariff() {
+  var networkState =  navigator.onLine;
+  if (networkState == false){
+    navigator.notification.alert("Check your internet connection");
+  } else {
+  $.ajax({
+          type: "post",
+          url: "http://communitylifeproject.ngo/lg/Api/pipeline/getAllTariff",
+          beforeSend : function() {$.mobile.loading('show')},
+          complete   : function() {$.mobile.loading('hide')},
+          success: function(response) {
+            if(response!=='') {
+              document.getElementById("tariff").innerHTML=response;
+            } else {
+              alert("No Tariff Found");
+            }
+
+          },
+          error: function(response) {
+            console.log(response);
+          }
+        });
+      }
 }

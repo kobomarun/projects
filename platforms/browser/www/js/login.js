@@ -1,9 +1,9 @@
 function validationcheck(){
   if (document.mylogin.username.value == "") {
-    alert("Please Enter Your Phone Number.");
+    navigator.notification.alert("Please Enter Your Phone Number.");
     document.mylogin.username.focus();
   } else if (document.mylogin.password.value == "") {
-    alert("Please Enter Password.");
+    navigator.notification.alert("Please Enter Password.");
     document.mylogin.password.focus();
   }
   else
@@ -40,6 +40,9 @@ function validationcheck(){
       localStorage.setItem("fname",response['fname']);
       localStorage.setItem("lname",response['lname']);
       localStorage.setItem("bname",response['bname']);
+      localStorage.setItem("ctotal",response['ctotal']);
+      localStorage.setItem("dtotal",response['dtotal']);
+
 
       if(response['type'] == 1) {
       location.href='dashboard.html';
@@ -47,7 +50,7 @@ function validationcheck(){
       location.href='customer-dash.html';
     }
     } else {
-      alert("Wrong Phone Number or Password");
+      navigator.notification.alert("Wrong Phone Number or Password");
       document.getElementById("submitButton").innerHTML="Login to your Account";
 
     }

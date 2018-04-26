@@ -12,6 +12,7 @@
       <script src="jqm/jquery.mobile-1.4.2.min.js"></script>
       <script src="js/neon-custom.js"></script>
       <script src="js/dashboard.js"></script>
+      <script src="cordova.js"></script>
 
    </head>
    <body ><div id="success"></div>
@@ -35,12 +36,12 @@
               <div class="text-plain-white">
                   <div class="pull-left">
                      Officer's ID <br />
-                     <span > 1212121 </span>
+                     <span id="phone"> 1212121 </span>
                   </div>
-                  <div class="aside pull-right">
-                    Total Tax Collected Today<br />
-                     <span> N0.00</span>
-                  </div>
+                  <!--<div class="aside pull-right">
+                    Total Tax Collected<br />
+                     <span id="dtotal"> N0.00</span>
+                  </div>-->
                </div>
                <div class="text-plain-white no-border">
                   <!--<div class="pull-left">
@@ -86,15 +87,15 @@
                      </div>
                      My Profile
                   </a>
-                  <a class="col-xs-4 a4"  onclick="location.href = 'news.html'">
+                  <a class="col-xs-4 a4"  onclick="location.href = 'listing.html'">
                      <div class="dash-icon ">
                         <i  class="entypo-suitcase"> </i>
                      </div>
                      Business Listings
                   </a>
 
-                  <a onclick="showConfirm(); return false;">
-                  <div class="col-xs-4 a3">
+                  <a onclick="showConfirm()">
+                  <div class="col-xs-4 a3" id="exitApp">
                      <div class="dash-icon ">
                         <i  class="entypo-cancel-squared"> </i>
                      </div>
