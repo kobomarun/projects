@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Owo-Ori Ijoba</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="jqm/jquery.mobile-1.4.2.min.css" />
+      <link rel="stylesheet" href="assets/entypo/css/entypo.css">
+      <link rel="stylesheet" href="assets/bootstrap.css">
+      <link rel="stylesheet" href="assets/neon-deon.css">
+      <link href="assets/style.css" rel="stylesheet">
+      <script src="js/jquery.min.js"></script>
+      <script src="jqm/jquery.mobile-1.4.2.min.js"></script>
+      <script src="js/neon-custom.js"></script>
+      <script src="js/dashboard.js"></script>
+      <script src="cordova.js"></script>
+
+   </head>
+   <body ><div id="success"></div>
+      <div data-role="page" class="mainbg">
+         <div data-role="header">
+            <div class="logo"><img src="assets/images/offline_single.png" height="30" /></div>
+
+         </div>
+         <!-- /header -->
+         <div role="main" class="ui-content">
+            <div class="pad">
+               <div class="text-plain-white">
+                  <div class="pull-left">
+                     <div style="font-size:19px" id="name">Olugbenga Agboola </div>
+                    <span > Location: Oshodi/Isolo </span>
+                  </div>
+                  <div class="dash-icon pull-right">
+                     <a onclick="location.href='dashboard.html'" style="color:#fff"><i  class="entypo-arrows-ccw"> </i></a>
+                  </div>
+               </div>
+              <div class="text-plain-white">
+                  <div class="pull-left">
+                     Officer's ID <br />
+                     <span id="phone"> 1212121 </span>
+                  </div>
+                  <!--<div class="aside pull-right">
+                    Total Tax Collected<br />
+                     <span id="dtotal"> N0.00</span>
+                  </div>-->
+               </div>
+               <div class="text-plain-white no-border">
+                  <!--<div class="pull-left">
+                     Business Type<br />
+                     <span > Not Available</span>
+                  </div>-->
+                  <div class="aside pull-right">
+                      <br />
+                     <span> </span>
+                  </div>
+               </div>
+            </div>
+            <div class="metro">
+               <div class="row">
+                  <a class="col-xs-4 a1" onclick="location.href = 'business-registration.html'" data-prefetch="true" data-transition="slide">
+                     <div class="dash-icon ">
+                        <i  class="entypo-picture"> </i>
+                     </div>
+                     Business Registration
+                  </a>
+									<a class="col-xs-4 a2" onclick="location.href = 'tariff-payment.html'"  data-prefetch="true" data-transition="slide">
+
+                     <div class="dash-icon ">
+                        <i  class="entypo-mobile"> </i>
+                     </div>
+                     Tax/Tariff Payment
+                  </a>
+                  <a class="col-xs-4 a3"  onclick="location.href = 'tariff-verify.html'" data-prefetch="true" data-transition="slide">
+                     <div class="dash-icon ">
+                        <i  class="entypo-picture"> </i>
+                     </div>
+                     Verify Tax/Tariff
+                  </a>
+                    <a class="col-xs-4 a4"  onclick="location.href = 'news.html'">
+                     <div class="dash-icon ">
+                        <i  class="entypo-network"> </i>
+                     </div>
+                     News
+                  </a>
+                  <a class="col-xs-4 a4"  onclick="location.href = 'profile.html'">
+                     <div class="dash-icon ">
+                        <i  class="entypo-user"> </i>
+                     </div>
+                     My Profile
+                  </a>
+                  <a class="col-xs-4 a4"  onclick="location.href = 'listing.html'">
+                     <div class="dash-icon ">
+                        <i  class="entypo-suitcase"> </i>
+                     </div>
+                     Business Listings
+                  </a>
+
+                  <a onclick="showConfirm()">
+                  <div class="col-xs-4 a3" id="exitApp">
+                     <div class="dash-icon ">
+                        <i  class="entypo-cancel-squared"> </i>
+                     </div>
+                     Exit
+                  </div>
+                </a>
+               </div>
+            </div>
+         </div>
+         <!-- /content -->
+      </div>
+      <!-- /page -->
+      <script src="js/dashboard.js"></script>
+   </body>
+</html>
